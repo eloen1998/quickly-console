@@ -17,6 +17,7 @@
         "semi": "off"
     },
     "ignorePatterns": [
-        "dist"
+        "dist",
+        "test/code.vue"
     ]
 }

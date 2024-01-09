@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getVariableVue } from "../src/handler/handleVue";
+import { getVariableVue } from "../src/handler/handleOther";
 import path from "path";
 import fs from "fs";
 

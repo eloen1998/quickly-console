@@ -11,8 +11,19 @@ import {
     VariableDeclaration
 } from "@babel/types";
 
-export function isContain(node, index: number) {
-    return index >= node.start && index <= node.end;
+export function isContain(node: { start?: number | null; end?: number | null }, index: number) {
+    return index >= (node?.start || 0) && index <= (node?.end||0);
+}
+
+export function getVariableDeclarationVariables(
+    params: VariableDeclaration
+): string[] {
+    return params.declarations.reduce(
+        (pre: string[], declaration): string[] => {
+            return pre.concat(getLValVariables(declaration.id));
+        },
+        []
+    );
 }
 
 export function getLValVariables(lVal: LVal): string[] {
@@ -110,17 +121,6 @@ export function getParamsVariables(
     return params.reduce((pre: string[], param) => {
         return pre.concat(getLValVariables(param));
     }, []);
-}
-
-export function getVariableDeclarationVariables(
-    params: VariableDeclaration
-): string[] {
-    return params.declarations.reduce(
-        (pre: string[], declaration): string[] => {
-            return pre.concat(getLValVariables(declaration.id));
-        },
-        []
-    );
 }
 
 // a.b[c]形式的语法识别

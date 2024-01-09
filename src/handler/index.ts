@@ -1,18 +1,22 @@
 import { getVariableJs, getConsoleRangeJs } from "./handleJs";
-import { getVariableVue, getConsoleRangeVue } from "./handleVue";
+import { getVariableOther, getConsoleRangeOther } from "./handleOther";
 
 export function getVariable(code: string, index: number, type: string) {
-    if (type === "vue") {
-        return getVariableVue(code, index);
-    } else {
-        return getVariableJs(code, index);
-    }
+  if (isJsOrTs(type)) {
+    return getVariableJs(code, index);
+  } else {
+    return getVariableOther(code, index);
+  }
 }
 
 export function getConsoleRange(code: string, type: string) {
-    if (type === "vue") {
-        return getConsoleRangeVue(code);
-    } else {
-        return getConsoleRangeJs(code);
-    }
+  if (isJsOrTs(type)) {
+    return getConsoleRangeJs(code);
+  } else {
+    return getConsoleRangeOther(code);
+  }
+}
+
+function isJsOrTs(type: string) {
+  return ["javascript", "typescript"].includes(type);
 }

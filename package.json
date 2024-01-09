@@ -1,7 +1,7 @@
 {
     "name": "quickly-console",
     "displayName": "Quickly Console",
-    "description": "A extension for quickly console.",
+    "description": "智能console.",
     "publisher": "eloen",
     "author": "eloen",
     "repository": {
@@ -109,7 +109,6 @@
         "@typescript-eslint/eslint-plugin": "^6.3.0",
         "@typescript-eslint/parser": "^6.3.0",
         "@vscode/vsce": "^2.20.1",
-        "@vue/compiler-sfc": "^3.3.4",
         "eslint": "^8.46.0",
         "esno": "^0.16.3",
         "tsup": "^6.7.0",
