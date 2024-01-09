@@ -109,6 +109,7 @@
         "@typescript-eslint/eslint-plugin": "^6.3.0",
         "@typescript-eslint/parser": "^6.3.0",
         "@vscode/vsce": "^2.20.1",
+        "conventional-changelog-cli": "^4.1.0",
         "eslint": "^8.46.0",
         "esno": "^0.16.3",
         "tsup": "^6.7.0",

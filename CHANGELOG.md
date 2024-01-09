@@ -1,3 +1,13 @@
+# 0.5.0 (2024-01-09)
+
+
+### Features
+
+* 适配其他包含script标签的文件类型 ([2c22fe8](https://github.com/eloen1998/quickly-console/commit/2c22fe82285b96e5c8da58d62336672c7f9d30e2))
+* 细节 ([b43f497](https://github.com/eloen1998/quickly-console/commit/b43f4979df749a38c43cf2b8c4f663205ba99bde))
+
+
+
 ## [0.3.2](https://github.com/eloen1998/qk-console/compare/v0.3.0...v0.3.2) (2023-07-14)
 
 
