@@ -1,3 +1,11 @@
+# 0.5.1 (2024-07-15)
+
+
+### Features
+
+* 识别class中的方法 ([653ef7f](https://github.com/eloen1998/quickly-console/commit/653ef7f5b02649401f924b323262a0de9d210726))
+
+
 # 0.5.0 (2024-01-09)
 
 
