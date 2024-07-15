@@ -1,12 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { getConsoleRangeVue } from "../src/handler/handleOther";
+import { getConsoleRangeOther } from "../src/handler/handleOther";
 import path from "path";
 import fs from "fs";
 
 describe("get consoleRange in vue", () => {
     const code = fs.readFileSync(path.join(__dirname, "./code.vue"), "utf-8");
     it("获取console.log范围", () => {
-        const consoleRange = getConsoleRangeVue(code);
+        const consoleRange = getConsoleRangeOther(code);
         expect(consoleRange).toEqual([
             {
                 name: "log",
