@@ -8,7 +8,7 @@
         "type": "git",
         "url": "https://github.com/eloen1998/quickly-console"
     },
-    "version": "0.5.0",
+    "version": "0.5.1",
     "icon": "static/icon.png",
     "engines": {
         "vscode": ">=1.81.0"
