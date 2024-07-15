@@ -14,7 +14,8 @@ import {
     VariableDeclaration,
     ExpressionStatement,
     AssignmentExpression,
-    ArrowFunctionExpression
+    ArrowFunctionExpression,
+    ClassMethod
 } from "@babel/types";
 import {
     isContain,
@@ -64,6 +65,20 @@ export function getVariableJs(code: string, offset: number): ConsoleVariable {
             const node = path.node;
             if (isContain(node, offset)) {
                 consoleVariable.funcName = node.id?.name;
+                consoleVariable.variables = getParamsVariables(node.params);
+            } else {
+                path.skip();
+            }
+        },
+        ClassMethod(path: NodePath<ClassMethod>) {
+            const node = path.node;
+            if (isContain(node, offset)) {
+                if (node.key.type === "Identifier") {
+                    consoleVariable.funcName = node.key.name;
+                }
+                if (node.key.type === "StringLiteral") {
+                    consoleVariable.funcName = node.key.value;
+                }
                 consoleVariable.variables = getParamsVariables(node.params);
             } else {
                 path.skip();

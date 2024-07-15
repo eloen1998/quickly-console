@@ -8,7 +8,8 @@ import {
     ObjectPattern,
     MemberExpression,
     AssignmentPattern,
-    VariableDeclaration
+    VariableDeclaration,
+    TSParameterProperty
 } from "@babel/types";
 
 export function isContain(node: { start?: number | null; end?: number | null }, index: number) {
@@ -116,7 +117,7 @@ function getObjectPatternVariables(objectPattern: ObjectPattern): string[] {
 }
 
 export function getParamsVariables(
-    params: Array<Identifier | Pattern | RestElement>
+    params: Array<Identifier | Pattern | RestElement | TSParameterProperty>
 ): string[] {
     return params.reduce((pre: string[], param) => {
         return pre.concat(getLValVariables(param));
